@@ -1,13 +1,24 @@
+<img class="apple-logo" *ngIf="!isLoggedIn" src="../../../assets//Apple-Logo.png" />
+<img class="android-logo" *ngIf="!isLoggedIn" src="../../../assets/android-logo-0.png" />
+
+<mat-toolbar color="primary" *ngIf="!isLoggedIn">
+    <span>
+        <a routerLink="/dashboard">Mobile Electronics</a>
+    </span>
+
+</mat-toolbar>
 <mat-toolbar color="primary" *ngIf="isLoggedIn">
     <mat-toolbar-row>
         <span>
-            <a routerLink="/dashboard">Mobile Electronics</a></span>
+            <a routerLink="/dashboard">Mobile Electronics</a>
+        </span>
         <span class="fill-remaining-space"></span>
         <span class="spacer"></span>
         <span class="align-center"></span>
         <span class="example-spacer"></span>
-        <button mat-button routerLink="/stock">Stock</button>
-        <button mat-button routerLink="/client">Klienti</button>
-        <button mat-button routerLink="/bills">Fatura</button>
-        <button mat-button routerLink="/" (click)="logOut()">Log out</button>
+        <button mat-button class="toolbar_routes" routerLink="/stock"><span>Stock</span></button>
+        <button mat-button class="toolbar_routes" routerLink="/client"><span>Klienti</span></button>
+        <button mat-button class="toolbar_routes" routerLink="/bills"><span>Fatura</span></button>
+        <button mat-button class="toolbar_routes" routerLink="/" (click)="logOut()"><span>Log out</span></button>
     </mat-toolbar-row>
+</mat-toolbar>

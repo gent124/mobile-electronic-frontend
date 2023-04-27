@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div class="header">
+
+        <h1>New Product</h1>
+        <div class="spacer"></div>
+        <button type="button" class="add-product" (click)="backToStock()">Get Back </button>
+
+
+
+    </div>
+
+    <div class="form">
+
+        <form [formGroup]="productForm" (ngSubmit)="addProduct({})">
+            <div>
+                <label for="product-type">
+                    Lloji*
+                </label>
+                <input type="text" id="product-type" formControlName="type" />
+            </div>
+
+            <div>
+                <label for="product-quanity">
+                    Sasia*
+                </label>
+                <input type="text" id="product-quanity" formControlName="quanity">
+            </div>
+
+            <div>
+                <label for="product-price">
+                    Qmimi
+                </label>
+                <input type="text" id="product-price" formControlName="price">
+            </div>
+
+            <button type="submit" class="button">Add Product</button>
+
+        </form>
+    </div>

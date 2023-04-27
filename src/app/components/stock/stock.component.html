@@ -1,1 +1,43 @@
-<p>stock works!</p>
+<div class="container">
+
+    <div class="header">
+
+        <h1>Manage Stock</h1>
+        <div class="spacer"></div>
+        <button type="button" class="add-product" (click)="addProduct()">Add Product </button>
+    </div>
+
+    <div class="container-xl">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                </div>
+                <table class="table table-striped table-hover table-bordered table-content">
+                    <thead>
+                        <tr class="center-align">
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of dataSource" class="center-align">
+                            <td>{{ employee.name }}</td>
+                            <td>{{ employee.position }}</td>
+                            <td>{{ employee.symbol }}</td>
+                            <!-- <td>
+
+                                <button type="button" class="btn"><i class='fas fa-trash-alt delete'></i></button>
+                            </td> -->
+                        </tr>
+                        <tr>
+                            <td *ngIf="dataSource.length == 0" colspan="6">No Employee Found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

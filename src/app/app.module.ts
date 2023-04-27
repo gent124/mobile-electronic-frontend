@@ -6,7 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,6 +22,7 @@ import { StockComponent } from './components/stock/stock.component';
 import { BillsComponent } from './components/bills/bills.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     BillsComponent,
     DashboardComponent,
     ToolbarComponent,
+    AddProductComponent,
 
   ],
   imports: [
