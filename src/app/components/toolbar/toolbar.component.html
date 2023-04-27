@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" *ngIf="isLoggedIn">
+    <mat-toolbar-row>
+        <span>
+            <a routerLink="/dashboard">Mobile Electronics</a></span>
+        <span class="fill-remaining-space"></span>
+        <span class="spacer"></span>
+        <span class="align-center"></span>
+        <span class="example-spacer"></span>
+        <button mat-button routerLink="/stock">Stock</button>
+        <button mat-button routerLink="/client">Klienti</button>
+        <button mat-button routerLink="/bills">Fatura</button>
+        <button mat-button routerLink="/" (click)="logOut()">Log out</button>
+    </mat-toolbar-row>
