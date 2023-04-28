@@ -1,13 +1,10 @@
-h1 {
-    color: white;
-    padding: 10px;
-}
-
 .container {
     margin: 0 auto;
-    margin-top: 5em;
-    height: 55%;
+    margin-top: 2em;
     width: 80%;
+    height: calc(100vh - 150px);
+    /* set the height to the viewport height minus the header and footer height */
+    padding-bottom: 20px;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -17,34 +14,52 @@ h1 {
         0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-table {
-    width: 100%;
-    text-align: center;
-    border: 1px solid black;
-    margin-top: 20px;
-}
-
-thead {
-    border: 1px solid black;
-}
-
 .header {
     background-color: #3f51b5;
-    height: 50px;
     display: flex;
     flex-direction: row;
-}
-
-.header button {
-    margin: 7px 15px;
-    opacity: 1;
-    border: none;
 }
 
 .spacer {
     flex: 1 1 auto;
 }
 
-/* td {
-    border: 1px solid black;
-} */
+.header button {
+    margin: 13px;
+}
+
+h1 {
+    margin: 13px;
+
+    color: white;
+
+}
+
+.table-responsive {
+    width: 90%;
+    margin: 0 auto;
+    height: calc(100% - 60px);
+    /* set the height to the container height minus the header row height */
+    overflow-y: scroll;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    color: #172B4D;
+    font-weight: 500;
+    border-bottom: 1px solid #ccc;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

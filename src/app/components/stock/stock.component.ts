@@ -1,16 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-const ELEMENT_DATA = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+import { Product } from 'src/app/interfaces/product.interface';
+
+const products: Product[] = [
+  {type: 'LCD X', quantity: 5, price: 23.3},
+  {type: 'LCD 11 Pro', quantity: 10, price: 23.4},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'Port 7+ ORG', quantity: 3, price: 3.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+  {type: 'LCD 12 Max', quantity: 12, price: 12.5},
+
+
+
 ];
 @Component({
   selector: 'app-stock',
@@ -21,14 +34,47 @@ const ELEMENT_DATA = [
 
 export class StockComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  products = products;
 
   constructor(private router: Router) {
 
   }
 
+addProduct() {
+  this.router.navigate(['addProduct']);
+}
 
-  addProduct() {
-    this.router.navigate(['addProduct']);
+  onProductAdded(product: Product): void {
+    this.products.push(product);
+    const newproducts = [...this.products];
+      this.products = newproducts;
+  }
+
+  deleteProduct(productType: string) {
+    const index = this.products.findIndex(product => product.type === productType);
+    if (index !== -1) {
+      this.products.splice(index, 1);
+      const newproducts = [...this.products ];
+      this.products = newproducts;
+    }
+  }
+
+  editProduct() {
+    this.router.navigate(['editProduct']);
+  }
+
+  increment(productQuantity: number) {
+    const index = this.products.findIndex(product => product.quantity === productQuantity);
+    products[index].quantity += 1;
+
+  }
+
+  decrement(productQuantity: number) {
+    const index = this.products.findIndex(product => product.quantity === productQuantity);
+    if(products[index].quantity !== 0){
+      products[index].quantity -= 1;
+    }else {
+      alert('Not in stock')
+    }
   }
 }

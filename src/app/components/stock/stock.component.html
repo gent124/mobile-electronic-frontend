@@ -1,43 +1,57 @@
 <div class="container">
-
     <div class="header">
-
         <h1>Manage Stock</h1>
         <div class="spacer"></div>
-        <button type="button" class="add-product" (click)="addProduct()">Add Product </button>
+        <button mat-raised-button type="button" class="add-product" (click)="addProduct()">Add
+            Product
+        </button>
+
+
+
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered table-content">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.type }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.price | currency: 'EUR' }}</td>
+                    <td>
+                        <button mat-button color="primary" title="Increment" (click)="increment(product.quantity)">
+                            <mat-icon>arrow_upward</mat-icon>
+
+                        </button>
+
+                        <button mat-button color="primary" title="Decrement" (click)="decrement(product.quantity)">
+                            <mat-icon>arrow_downward</mat-icon>
+
+                        </button>
+                    </td>
+                    <td>
+                        <button mat-button color="primary" (click)="editProduct()" title="Edit Product">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-button color="primary" (click)="deleteProduct(product.type)" title="Delete Product">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+
+                </tr>
+                <tr *ngIf="products.length == 0">
+                    <td colspan="4">No products found</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <div class="container-xl">
-        <div class="table-responsive">
-            <div class="table-wrapper">
-                <div class="table-title">
-                </div>
-                <table class="table table-striped table-hover table-bordered table-content">
-                    <thead>
-                        <tr class="center-align">
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let employee of dataSource" class="center-align">
-                            <td>{{ employee.name }}</td>
-                            <td>{{ employee.position }}</td>
-                            <td>{{ employee.symbol }}</td>
-                            <!-- <td>
-
-                                <button type="button" class="btn"><i class='fas fa-trash-alt delete'></i></button>
-                            </td> -->
-                        </tr>
-                        <tr>
-                            <td *ngIf="dataSource.length == 0" colspan="6">No Employee Found</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 
 </div>

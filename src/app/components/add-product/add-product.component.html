@@ -4,7 +4,9 @@
 
         <h1>New Product</h1>
         <div class="spacer"></div>
-        <button type="button" class="add-product" (click)="backToStock()">Get Back </button>
+        <button mat-raised-button type="button" class="add-product"
+            (click)="backToStock()"><mat-icon>arrow_back</mat-icon>
+            Back</button>
 
 
 
@@ -12,29 +14,30 @@
 
     <div class="form">
 
-        <form [formGroup]="productForm" (ngSubmit)="addProduct({})">
-            <div>
+        <form class="example-form" [formGroup]="productForm" (ngSubmit)="addProduct()">
+            <div class="form-field">
                 <label for="product-type">
                     Lloji*
                 </label>
-                <input type="text" id="product-type" formControlName="type" />
+                <input type="text" id="product-type" formControlName="type" required />
             </div>
 
-            <div>
-                <label for="product-quanity">
+            <div class="form-field">
+                <label for="product-quantity">
                     Sasia*
                 </label>
-                <input type="text" id="product-quanity" formControlName="quanity">
+                <input type="text" id="product-quantity" formControlName="quantity" required>
             </div>
 
-            <div>
+            <div class="form-field">
                 <label for="product-price">
                     Qmimi
                 </label>
                 <input type="text" id="product-price" formControlName="price">
             </div>
 
-            <button type="submit" class="button">Add Product</button>
+            <button mat-button [disabled]="!productForm.valid" type="submit" class="button">Add Product</button>
 
         </form>
+
     </div>

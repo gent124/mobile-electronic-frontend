@@ -23,6 +23,7 @@ import { BillsComponent } from './components/bills/bills.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
     DashboardComponent,
     ToolbarComponent,
     AddProductComponent,
+    EditProductComponent,
 
   ],
   imports: [
