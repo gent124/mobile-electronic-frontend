@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="header">
+
+        <h1>New Client</h1>
+        <div class="spacer"></div>
+        <button mat-raised-button type="button" class="add-client"
+            (click)="backToClients()"><mat-icon>arrow_back</mat-icon>
+            Back</button>
+
+
+
+    </div>
+    <div class="form">
+        <form class="example-form" [formGroup]="clientForm">
+            <div class="form-field">
+                <label for="client-name">
+                    Name:
+                </label>
+                <input type="text" id="client-name" formControlName="name" required />
+            </div>
+
+            <div class="form-field">
+                <label for="client-issue">
+                    Issue
+                </label>
+                <input type="text" id="client-issue" formControlName="issue" required>
+            </div>
+
+            <div class="form-field">
+                <label for="client-phoneNumber">
+                    Phone
+                </label>
+                <input type="text" id="client-phoneNumber" formControlName="phoneNumber">
+            </div>
+
+            <button mat-button [disabled]="!clientForm.valid" type="submit" class="button">Add Client</button>
+        </form>
+
+    </div>
+
+</div>

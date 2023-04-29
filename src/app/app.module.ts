@@ -14,6 +14,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ClientComponent } from './components/client/client.component';
@@ -24,6 +25,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
+import { AddClientComponent } from './components/add-client/add-client.component';
+import { PhoneNumberPipe } from './pipes/phone-number.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
     ToolbarComponent,
     AddProductComponent,
     EditProductComponent,
+    AddClientComponent,
+    PhoneNumberPipe,
 
   ],
   imports: [
@@ -59,6 +64,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
   MatSlideToggleModule,
   MatSelectModule,
   MatOptionModule,
+  FormsModule
 
   ],
   providers: [],

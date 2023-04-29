@@ -33,7 +33,6 @@ const products: Product[] = [
 
 
 export class StockComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   products = products;
 
   constructor(private router: Router) {

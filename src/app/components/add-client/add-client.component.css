@@ -35,8 +35,9 @@ h1 {
 }
 
 
+
 form {
-    margin-top: 3.5em;
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,12 +45,11 @@ form {
 }
 
 .form-field {
-    padding-right: 8em;
+    padding-right: 4em;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 23x;
     margin: 17px;
 }
 
@@ -73,11 +73,12 @@ form {
 
 
 .button {
-    margin: 3em;
-    margin-left: 33px;
+    margin-top: 3em;
+    margin-left: 45px;
     width: 16.5em;
     height: 3em;
     color: white;
+    background-color: #3f51b5;
 }
 
 button:disabled {

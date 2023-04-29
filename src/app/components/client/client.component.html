@@ -1,22 +1,52 @@
-<p>client works!</p>
-
-
-<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
-
-    <div>
-        <label for="name">
-            Name:
-        </label>
-        <input type="text" id="name" formControlName="name" />
+<div class="container">
+    <div class="header">
+        <h1>Manage Clients</h1>
+        <div class="spacer"></div>
+        <button mat-raised-button type="button" class="add-client" (click)="addClient()">Add Client
+        </button>
     </div>
 
-    <div>
-        <label for="issue">
-            Issue:
-        </label>
-        <input type="text" id="issue" formControlName="issue" />
+    <div class="actions">
+        <div class="search">
+            <input type="text" [(ngModel)]="searchQuery" placeholder="Search by Name" />
+            <button mat-button type="button" (click)="updateFilteredClients()"
+                class='button'><mat-icon>search</mat-icon>
+            </button>
+        </div>
+        <div class="spacer"></div>
+        <button type="button" mat-button color="primary" (click)="toggleShowAudioOnly()" name="filter">Show Audios
+        </button>
+        <button type="button" mat-button color="primary" (click)="toggleShowImeiOnly()" name="filter">Show Imei
+        </button>
+
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered table-content">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Issue</th>
+                    <th>Phone No.</th>
+                    <th>Date</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let client of clients">
+                    <tr *ngIf="client.issue === selectedFilter || selectedFilter === ''">
+                        <td>{{ client.name }}</td>
+                        <td>{{ client.issue }}</td>
+                        <td>{{ client.phoneNumber | phoneFormat }}</td>
+                        <td>{{ client.date | date : 'short' }}</td>
+
+                    </tr>
+                    <tr *ngIf="clients.length == 0">
+                        <td colspan="4">No clients found</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
     </div>
 
-    <button type="submit" class="button">Add Client</button>
 
-</form>
+</div>
