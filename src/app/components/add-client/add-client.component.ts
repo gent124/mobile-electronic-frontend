@@ -23,7 +23,7 @@ export class AddClientComponent implements OnInit {
     this.clientForm = this.formBuilder.group({
       name: this.formBuilder.control('', [Validators.required, Validators.minLength(3)]),
       issue: this.formBuilder.control('', [Validators.required, Validators.minLength(2)]),
-      phoneNumber: this.formBuilder.control('', [Validators.required, Validators.minLength(6)]),
+      phoneNumber: this.formBuilder.control(''),
       date: new Date(),
 
     })

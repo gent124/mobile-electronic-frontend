@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+
 import { Product } from 'src/app/interfaces/product.interface';
+import { EditProductComponent } from '../edit-product/edit-product.component';
 
 const products: Product[] = [
   {type: 'LCD X', quantity: 5, price: 23.3},
@@ -35,7 +38,9 @@ const products: Product[] = [
 export class StockComponent {
   products = products;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private dialog: MatDialog) {
 
   }
 
@@ -58,8 +63,12 @@ addProduct() {
     }
   }
 
-  editProduct() {
-    this.router.navigate(['editProduct']);
+  editProduct(product: Product) {
+    const dialogRef = this.dialog.open(EditProductComponent, {
+      data: { type: 'product', data: product }
+    })
+
+
   }
 
   increment(productQuantity: number) {

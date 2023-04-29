@@ -1,1 +1,23 @@
-<p>edit-product works!</p>
+<div class="edit-container">
+    <div class="edit-header">
+        <h2>Edit Product</h2>
+    </div>
+    <div class="form-container">
+        <form #editForm="ngForm" class='form-group' (ngSubmit)="onSave()">
+
+            <div>
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" [(ngModel)]="product.type" required>
+            </div>
+            <div>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" [(ngModel)]="product.quantity" required>
+            </div>
+            <div>
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" [(ngModel)]="product.price" required>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>

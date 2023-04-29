@@ -12,6 +12,7 @@
         0 22.3px 17.9px rgba(0, 0, 0, 0.072),
         0 41.8px 33.4px rgba(0, 0, 0, 0.086),
         0 100px 80px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 }
 
 .header {
@@ -86,14 +87,19 @@ tr:nth-child(even) {
     border: 0.5px solid black;
     border-radius: 15px;
     text-align: center;
+    /* margin-top: 10px; */
 }
 
 .search button {
-    margin: 5px auto;
+
     border: none;
     background-color: white;
 }
 
 .search button:hover {
     background-color: white;
+}
+
+.edit-button {
+    font-size: 10;
 }

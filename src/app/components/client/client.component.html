@@ -28,7 +28,7 @@
                     <th>Issue</th>
                     <th>Phone No.</th>
                     <th>Date</th>
-
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,7 +38,14 @@
                         <td>{{ client.issue }}</td>
                         <td>{{ client.phoneNumber | phoneFormat }}</td>
                         <td>{{ client.date | date : 'short' }}</td>
-
+                        <td>
+                            <button mat-button color="primary" class="edit-button" (click)="editClient(client)">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button mat-button color="primary" class="edit-button" (click)="deleteClient(client)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
                     </tr>
                     <tr *ngIf="clients.length == 0">
                         <td colspan="4">No clients found</td>

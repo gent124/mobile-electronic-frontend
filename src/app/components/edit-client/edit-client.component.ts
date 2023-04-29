@@ -1,22 +1,22 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Product } from 'src/app/interfaces/product.interface';
-
+import { Client } from 'src/app/interfaces/client.interface';
 @Component({
-  selector: 'app-edit-product',
-  templateUrl: './edit-product.component.html',
-  styleUrls: ['./edit-product.component.css']
+  selector: 'app-edit-client',
+  templateUrl: './edit-client.component.html',
+  styleUrls: ['./edit-client.component.css']
 })
-export class EditProductComponent {
-  product: Product;
+export class EditClientComponent {
+
+  client!: Client;
 
   type :string = 'Client'
 
   constructor(
-    public dialogRef: MatDialogRef<EditProductComponent>,
+    public dialogRef: MatDialogRef<EditClientComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.product = data.data;
+    this.client = data.data;
   }
 
   onCancel(): void {

@@ -1,0 +1,23 @@
+<div class="edit-container">
+    <div class="edit-header">
+        <h2>Edit Client</h2>
+    </div>
+    <div class="form-container">
+        <form #editForm="ngForm" class='form-group' (ngSubmit)="onSave()">
+
+            <div>
+                <label for="name">Client Name:</label>
+                <input type="text" id="name" name="name" [(ngModel)]="client.name" required>
+            </div>
+            <div>
+                <label for="quantity">Issue:</label>
+                <input type="text" id="issue" name="issue" [(ngModel)]="client.issue" required>
+            </div>
+            <div>
+                <label for="price">PhoneNumber:</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" [(ngModel)]="client.phoneNumber" required>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>

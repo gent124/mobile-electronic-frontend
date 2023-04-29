@@ -15,7 +15,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { ClientComponent } from './components/client/client.component';
 import { LoginComponent } from './components/login/login.component';
@@ -27,6 +27,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { PhoneNumberPipe } from './pipes/phone-number.pipe';
+import { EditClientComponent } from './components/edit-client/edit-client.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { PhoneNumberPipe } from './pipes/phone-number.pipe';
     EditProductComponent,
     AddClientComponent,
     PhoneNumberPipe,
+    EditClientComponent,
 
   ],
   imports: [
@@ -64,7 +66,8 @@ import { PhoneNumberPipe } from './pipes/phone-number.pipe';
   MatSlideToggleModule,
   MatSelectModule,
   MatOptionModule,
-  FormsModule
+  FormsModule,
+  MatDialogModule
 
   ],
   providers: [],

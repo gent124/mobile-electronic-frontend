@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Client} from '../..//interfaces/client.interface'
+import { MatDialog } from '@angular/material/dialog';
+import { EditProductComponent } from '../edit-product/edit-product.component';
+import { EditClientComponent } from '../edit-client/edit-client.component';
 
 
 const clients: Client[] = [
@@ -39,7 +42,8 @@ filteredArray: Client[] = clients.slice();
 
   constructor(
     private router : Router,
-    private formBuilder : FormBuilder
+    private formBuilder : FormBuilder,
+    private dialog : MatDialog
   ) { }
 
 
@@ -80,20 +84,20 @@ ngOnInit(): void {
     );
   }
 
-  sortByName() {
-    const newArr = this.clients.sort((a,b) => a.name.localeCompare(b.name));
-    console.log(newArr)
-    this.clients = newArr;
+
+  deleteClient(client : Client) {
+    const index = this.clients.findIndex(client => client === client );
+    if (index !== -1) {
+      this.clients.splice(index, 1);
+      const newclients = [...this.clients ];
+      this.clients = newclients;
+    }
   }
 
-  sortByDate() {
-    console.log(this.clients.sort((a,b) => b.date.getDate() - a.date.getDate()))
-    return this.clients.sort((a,b) => b.date.getDate() - a.date.getDate());
-  }
-
-  sortByIssue() {
-    const sortedByIssues =  this.clients.sort((a,b) => a.issue.localeCompare(b.issue));
-    this.clients = sortedByIssues;
+  editClient(client: Client) {
+    const dialogRef = this.dialog.open(EditClientComponent, {
+      data: { type: 'product', data: client }
+    })
   }
 
 }
