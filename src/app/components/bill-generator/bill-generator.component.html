@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div class="header">
+        <h1>Fatura</h1>
+        <div class="spacer"></div>
+        <button mat-raised-button class="button" (click)="generatePdf()">Save</button>
+    </div>
+
+    <div id="pdfTable" #pdfTable>
+        <table class="table-responsive">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let unit of units">
+                    <td>{{ unit.type }}</td>
+                    <td>{{ unit.price | currency: 'EUR' }}</td>
+                    <td>{{unit.quantity}}</td>
+                    <td>{{unit.total | currency: 'EUR' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="total">
+
+            <p>Pre Total: {{preTotal | currency: 'EUR'}}</p>
+            <p> Debt: {{debt | currency : 'EUR'}}</p>
+            <p>Total : {{preTotal - debt | currency: 'EUR'}}</p>
+        </div>
+
+    </div>
+
+    <div class="debt">
+        <label for="debt">
+            Debt:
+        </label>
+        <input type="text" id="debt" [(ngModel)]="debt" />€
+    </div>
+</div>

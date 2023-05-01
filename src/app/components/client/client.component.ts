@@ -17,7 +17,15 @@ const clients: Client[] = [
   {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date()},
   {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date()},
   {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date()},
-  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)}
+  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+  {name: 'Redon', issue: "Port", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+  {name: 'Redon', issue: "tripi", phoneNumber: '044123456', date: new Date('3/24/22 12:50',)},
+
 
 
 
@@ -70,11 +78,13 @@ ngOnInit(): void {
 
   toggleShowAudioOnly() {
     this.showAudioOnly = !this.showAudioOnly;
+    this.showImeiOnly = false;
     this.selectedFilter = this.showAudioOnly ? 'Audio' : '';
   };
 
   toggleShowImeiOnly() {
     this.showImeiOnly = !this.showImeiOnly;
+    this.showAudioOnly = false;
     this.selectedFilter = this.showImeiOnly ? 'Imei' : '';
   }
 

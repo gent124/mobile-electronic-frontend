@@ -24,7 +24,6 @@ export class EditProductComponent {
   }
 
   onSave(): void {
-    // Implement logic to save the changes made to the product
     this.dialogRef.close();
   }
 }

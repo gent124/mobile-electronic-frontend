@@ -67,8 +67,6 @@ addProduct() {
     const dialogRef = this.dialog.open(EditProductComponent, {
       data: { type: 'product', data: product }
     })
-
-
   }
 
   increment(productQuantity: number) {

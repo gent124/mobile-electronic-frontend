@@ -1,1 +1,44 @@
-<p>bills works!</p>
+<div class="container">
+    <div class="header">
+        <h1>Fatura</h1>
+        <div class="spacer"></div>
+        <button mat-raised-button class="generate" (click)="openCart()">Fatura</button>
+
+    </div>
+
+
+
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <th>Name:</th>
+                <th>Price:</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+                <th> Total</th>
+            </thead>
+
+            <tbody *ngFor=" let unit of units">
+                <td>{{unit.type}}</td>
+                <td>{{unit.price | currency:'EUR':'symbol'}}</td>
+                <td>{{unit.quantity}}</td>
+                <td>
+                    <button mat-button color="primary" type="button" class="button" (click)="increment(unit)"
+                        (click)="addToCart(unit)">
+                        <mat-icon>add_circle_outline</mat-icon>
+                    </button>
+
+                    <button mat-button color="primary" type="button" class="button" (click)="decrement(unit)"
+                        (click)="removeFromCart(unit)">
+                        <mat-icon>remove_circle_outline</mat-icon>
+                    </button>
+                </td>
+                <td>{{unit.total | currency: 'EUR'}}</td>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <button class="button" type="button" (click)="getTotal()">Totali</button> -->
+
+</div>

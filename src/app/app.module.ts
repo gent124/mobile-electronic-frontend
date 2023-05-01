@@ -28,6 +28,7 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { AddClientComponent } from './components/add-client/add-client.component';
 import { PhoneNumberPipe } from './pipes/phone-number.pipe';
 import { EditClientComponent } from './components/edit-client/edit-client.component';
+import { BillGeneratorComponent } from './components/bill-generator/bill-generator.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
     AddClientComponent,
     PhoneNumberPipe,
     EditClientComponent,
+    BillGeneratorComponent,
 
   ],
   imports: [
